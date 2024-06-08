@@ -3,6 +3,7 @@ package dev.naul.gestao_vagas.modules.candidates.controllers;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.naul.gestao_vagas.modules.candidates.CandidateEntity;
+import dev.naul.gestao_vagas.modules.candidates.dto.ProfileCandidateResponseDTO;
 import dev.naul.gestao_vagas.modules.candidates.useCases.CreateCandidateUseCase;
 import dev.naul.gestao_vagas.modules.candidates.useCases.ListAllJobsByFilterUseCase;
 import dev.naul.gestao_vagas.modules.candidates.useCases.ProfileCandidateUseCase;
@@ -56,6 +57,15 @@ public class CandidateController {
 
     @GetMapping("/profile")
     @PreAuthorize("hasRole('CANDIDATE')")
+    @Tag(name = "Candidato", description = "Informações do cantidato")
+    @Operation(summary = "Perfil do candidato", description = "Essa função é responsável por buscar as informações do perfil do candidato")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = ProfileCandidateResponseDTO.class))
+            }),
+            @ApiResponse(responseCode = "400", description = "User not found")
+    })
+    @SecurityRequirement(name = "jwt_auth")
     public ResponseEntity<Object> profile(HttpServletRequest request) {
         try {
             var candidateId = request.getAttribute("candidate_id").toString();
