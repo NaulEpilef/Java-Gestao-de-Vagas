@@ -5,12 +5,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import dev.naul.gestao_vagas.exceptions.UserFoundException;
-import dev.naul.gestao_vagas.modules.candidates.CandidateEntity;
-import dev.naul.gestao_vagas.modules.candidates.CandidateRepository;
+import dev.naul.gestao_vagas.modules.candidates.entity.CandidateEntity;
+import dev.naul.gestao_vagas.modules.candidates.repositories.CandidateRepository;
 
 @Service
 public class CreateCandidateUseCase {
-    
+
     @Autowired
     private CandidateRepository candidateRepository;
 
@@ -19,9 +19,9 @@ public class CreateCandidateUseCase {
 
     public CandidateEntity execute(CandidateEntity candidateEntity) {
         this.candidateRepository.findByUsernameOrEmail(candidateEntity.getUsername(), candidateEntity.getEmail())
-        .ifPresent((user) -> {
-            throw new UserFoundException();
-        });
+                .ifPresent((user) -> {
+                    throw new UserFoundException();
+                });
 
         var password = passwordEncoder.encode(candidateEntity.getPassword());
         candidateEntity.setPassword(password);

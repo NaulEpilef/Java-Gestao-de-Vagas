@@ -15,8 +15,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import dev.naul.gestao_vagas.exceptions.JobNotFoundException;
 import dev.naul.gestao_vagas.exceptions.UserNotFoundException;
-import dev.naul.gestao_vagas.modules.candidates.CandidateEntity;
-import dev.naul.gestao_vagas.modules.candidates.CandidateRepository;
+import dev.naul.gestao_vagas.modules.candidates.entity.CandidateEntity;
+import dev.naul.gestao_vagas.modules.candidates.repositories.CandidateRepository;
 import dev.naul.gestao_vagas.modules.company.repositories.JobRepository;
 
 @ExtendWith(MockitoExtension.class)

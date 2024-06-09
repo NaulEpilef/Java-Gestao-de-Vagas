@@ -2,8 +2,8 @@ package dev.naul.gestao_vagas.modules.candidates.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.naul.gestao_vagas.modules.candidates.CandidateEntity;
 import dev.naul.gestao_vagas.modules.candidates.dto.ProfileCandidateResponseDTO;
+import dev.naul.gestao_vagas.modules.candidates.entity.CandidateEntity;
 import dev.naul.gestao_vagas.modules.candidates.useCases.CreateCandidateUseCase;
 import dev.naul.gestao_vagas.modules.candidates.useCases.ListAllJobsByFilterUseCase;
 import dev.naul.gestao_vagas.modules.candidates.useCases.ProfileCandidateUseCase;

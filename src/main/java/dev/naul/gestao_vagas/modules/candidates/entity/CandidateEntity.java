@@ -1,4 +1,4 @@
-package dev.naul.gestao_vagas.modules.candidates;
+package dev.naul.gestao_vagas.modules.candidates.entity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

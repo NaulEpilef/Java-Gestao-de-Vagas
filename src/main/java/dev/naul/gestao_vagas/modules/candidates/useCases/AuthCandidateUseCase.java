@@ -15,9 +15,9 @@ import org.springframework.stereotype.Service;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
-import dev.naul.gestao_vagas.modules.candidates.CandidateRepository;
 import dev.naul.gestao_vagas.modules.candidates.dto.AuthCandidateRequestDTO;
 import dev.naul.gestao_vagas.modules.candidates.dto.AuthCandidateResponseDTO;
+import dev.naul.gestao_vagas.modules.candidates.repositories.CandidateRepository;
 
 @Service
 public class AuthCandidateUseCase {
