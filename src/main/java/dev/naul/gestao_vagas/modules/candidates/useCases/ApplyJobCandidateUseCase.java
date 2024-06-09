@@ -24,20 +24,20 @@ public class ApplyJobCandidateUseCase {
     @Autowired
     private ApplyJobRepository applyJobRepository;
 
-    public ApplyJobEntity execute(UUID idCandidate, UUID idJob) {
-        this.candidateRepository.findById(idCandidate)
+    public ApplyJobEntity execute(UUID candidateId, UUID jobId) {
+        this.candidateRepository.findById(candidateId)
                 .orElseThrow(() -> {
                     throw new UserNotFoundException();
                 });
 
-        this.jobRepository.findById(idJob)
+        this.jobRepository.findById(jobId)
                 .orElseThrow(() -> {
                     throw new JobNotFoundException();
                 });
 
         var applyJob = ApplyJobEntity.builder()
-                .candidateId(idCandidate)
-                .jobId(idJob).build();
+                .candidateId(candidateId)
+                .jobId(jobId).build();
 
         applyJob = this.applyJobRepository.save(applyJob);
 
