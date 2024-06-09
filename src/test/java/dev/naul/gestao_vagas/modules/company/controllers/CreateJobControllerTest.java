@@ -1,7 +1,5 @@
 package dev.naul.gestao_vagas.modules.company.controllers;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +17,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import dev.naul.gestao_vagas.exceptions.CompanyNotFoundException;
 import dev.naul.gestao_vagas.modules.company.dto.CreateJobDTO;
 import dev.naul.gestao_vagas.modules.company.entities.CompanyEntity;
 import dev.naul.gestao_vagas.modules.company.repositories.CompanyRepository;
